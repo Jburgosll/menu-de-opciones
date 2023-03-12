@@ -1,0 +1,65 @@
+body{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url(WhatsApp\ Image\ 2023-03-12\ at\ 16.13.12.jpeg);
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+.contenedor{
+    display:flex;
+    flex-direction:column;
+  
+}
+.operaciones{
+    display:flex;
+    align-items:center;
+    flex-direction:row;
+    gap: 10px;
+}
+h1{
+    color:rgb(119, 32, 133);
+    font-size:50px;
+}
+.grupo{
+    display:flex;
+    justify-content:flex-start;
+    gap:20px;
+    height:30px;
+    width: 500px;
+    margin-bottom: 30px;
+}
+.grupo label, button{
+    width:100%;
+    font-size:20px;
+    font-weight:bold;
+}
+.grupo button{
+   border-radius:10px;
+    margin:2px;
+    color:white;
+   
+    height:45px;
+    background-image: linear-gradient(to right top, #1ba13f, #1ab7cb, #bd156c, #d7c135, #da6517);
+    cursor: pointer;
+    transition: .5s ease-in-out;  
+}
+.grupo input{
+  display:block;
+  border-radius: 7px;
+  font-size:25px;
+  padding: 25px;
+} 
+textarea{
+    margin-top:20px;
+    width:70%;
+    border-radius: 15px;
+    padding: 10px;
+    font-size:30px;
+    color:#1d2742;
+    font-weight:bold;
+    flex-direction: row;
+    background-color: aqua;
+}

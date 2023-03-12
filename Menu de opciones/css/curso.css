@@ -1,0 +1,45 @@
+body{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url(WhatsApp\ Image\ 2023-03-12\ at\ 16.13.12.jpeg);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:16px;
+}
+div{
+    display:flex;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+h1{
+    color:rgb(140, 43, 155);
+    font-size:50px;
+    text-align: center;
+}
+.opcion{
+    display:block;
+    text-align:center;
+    text-decoration: none;
+    width:435px;
+    height:75px;
+    border-radius:15px;
+    line-height:60px;
+    font-size:17px;
+    color:rgb(6, 21, 13);
+    font-weight:bold;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+.opcion:hover{
+    height:70px;
+    line-height:70px;
+    background-image: linear-gradient(to right top, #340d47, #5c44b9, #721060, #1a48b3, #dc6dd3);
+    
+}
+
+

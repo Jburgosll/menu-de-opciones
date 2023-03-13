@@ -57,9 +57,9 @@ class Calculadora{
     exponente2(){
         let num=[3,4,5,6,7],i=0,expos=[]
         for(i=0;i<num.length;i++){
-            let acu=0
-            acu=num[i]**num[i]
-            expos.push(acu)
+            this.numero(num[i])
+            let s=this.expo(num[i])
+            expos.push(s)
         }
         document.getElementById("resp").textContent=`[${num}]Este arreglo elevado asu propio numero es=\n[${expos}]`
     }

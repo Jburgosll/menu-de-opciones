@@ -63,17 +63,19 @@ class Calculadora{
         }
         document.getElementById("resp").textContent=`[${num}]Este arreglo elevado asu propio numero es=\n[${expos}]`
     }
+    multi(num2){
+        let multi=this.num*num2
+        return multi
+    }
     TablaDeMultiplicar(){
-        let num = document.getElementById("num1").value;
-        let multi = 0,arreglo=[]
-        let i=1
-        while(i<=12){
-          multi=num*i
-          let m=`${num}*${i}=${multi}`
-          arreglo.push(m)
-          i=i+1
+        let tabla = parseInt(document.getElementById("num1").value),tablas=tabla
+        this.numero(tabla)
+        for (let i = 1; i <= 12; i++) {
+            let multi=this.multi(i)
+          tablas += `\n${tabla} x ${i} = ${multi}`;
         }
-        document.getElementById("resp").textContent = `${arreglo}`
+        document.getElementById('resp').textContent = tablas;
+
     }
     numero(num){
         this.num=num

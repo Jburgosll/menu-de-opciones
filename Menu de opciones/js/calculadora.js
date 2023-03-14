@@ -8,7 +8,9 @@ class Calculadora{
     perfecto(){
         // capturar
         let suma=0
-        let num1= [6,28,3,5,7,67,9],perfecto=[]
+        let num=document.getElementById("num1"),perfecto=[]
+        let arreglo=num.value
+        let num1=arreglo.split(",")
         for(let i=0;i<num1.length;i++){ 
             let acud=0
             for(let divisor=1;divisor<num1[i];divisor++){
@@ -21,12 +23,15 @@ class Calculadora{
                 perfecto.push(num1[i])
             }
         }
-        document.getElementById("resp").textContent=`${num1}\nla suma entre ${perfecto} es = ${suma}`  
+        document.getElementById("resp").textContent=`[${num1}]\nla suma entre ${perfecto} es = ${suma}`  
     }
     primo(){
         let d=document
-        let num1= [6,5,25,7,28],primo=[],divisor=2
+        let num= document.getElementById("num1"),primo=[] 
+        let arreglo=num.value
+        let num1=arreglo.split(",")
         for(let i=0;i<num1.length;i++){
+            let divisor=2
             let band=1
             while(divisor < num1[i] && band == 1){
                 if (num1[i] % divisor == 0){
@@ -40,50 +45,46 @@ class Calculadora{
                 primo.push(num1[i])
             }
         } 
-        d.getElementById("resp").textContent=`${num1}\n${primo} son numeros primos`
+        d.getElementById("resp").textContent=`[${num1}]\n${primo} son numeros primos`
     }
     exponente(){
         let d=document
         let num1=parseInt(d.getElementById("num1").value)
         let num2=parseInt(d.getElementById("num2").value)
-        this.numero(num1)
-        let s=this.expo(num2)
+        let s=this.expo(num1,num2)
         d.getElementById("resp").textContent=`${num1} elevado a ${num2} = ${s}`
     }
-    expo(num2){
-        let base=this.num**num2
+    expo(num1,num2){
+        let base=num1**num2
         return base
     }
     exponente2(){
-        let num=[3,4,5,6,7],i=0,expos=[]
-        for(i=0;i<num.length;i++){
-            this.numero(num[i])
-            let s=this.expo(num[i])
+        let $imput=document.getElementById("num1"),expos=[]
+        let arreglo=$imput.value
+        let num=arreglo.split(",")
+        for(let i=0;i<num.length;i++){
+            let s=this.expo(num[i],num[i])
             expos.push(s)
         }
         document.getElementById("resp").textContent=`[${num}]Este arreglo elevado asu propio numero es=\n[${expos}]`
     }
-    multi(num2){
-        let multi=this.num*num2
+    multi(num1,num2){
+        let multi=num1*num2
         return multi
     }
     TablaDeMultiplicar(){
         let tabla = parseInt(document.getElementById("num1").value),tablas=tabla
-        this.numero(tabla)
         for (let i = 1; i <= 12; i++) {
-            let multi=this.multi(i)
+            let multi=this.multi(tabla,i)
           tablas += `\n${tabla} x ${i} = ${multi}`;
         }
         document.getElementById('resp').textContent = tablas;
 
     }
-    numero(num){
-        this.num=num
-    }
-    divi(num2){
+    divi(num1,num2){
         let divisor=[]
-        for(let i =num2;i<this.num;i++ ){
-            if(this.num % i==0){
+        for(let i =num2;i<num1;i++ ){
+            if(num1 % i==0){
                 divisor.push(i)
             }
         }
@@ -92,15 +93,13 @@ class Calculadora{
     divisores(){
         let num1=parseInt(document.getElementById("num1").value)
         let num2=parseInt(document.getElementById("num2").value)
-        this.numero(num1)
-        let h=this.divi(num2)
+        let h=this.divi(num1,num2)
         document.getElementById("resp").textContent=`los divisores de ${num1} son= ${h}`
     }
     divisoresSuma(){
         let num1=parseInt(document.getElementById("num1").value),acu=0
         let num2=parseInt(document.getElementById("num2").value)
-        this.numero(num1)
-        let h=this.divi(num2)
+        let h=this.divi(num1,num2)
         for(let i=0;i<h.length;i++){
             acu=acu+h[i]
         }
@@ -164,26 +163,27 @@ class Calculadora{
         document.getElementById("resp").textContent=`el factorial de ${num1} es: \n${num}`
     }
     factorialDeNumeros(){
-        let num1=[3,4,5,6],factoriales=[]
+        let num=document.getElementById("num1"),factoriales=[]
+        let arreglo=num.value
+        let num1=arreglo.split(",")
         for(let i=0;i<num1.length;i++){
             let num=this.fac(num1[i])
             factoriales.push(num)
         }
         document.getElementById("resp").textContent=`el factorial de esta serie de numeros [${num1}] es: \n[${factoriales}]`
     }
-    series(n){
+    series(a,n){
         let arreglo=[]
-        while(this.num < n){
-            arreglo.push(this.num)
-            this.num=this.num+1
+        while(a< n){
+            arreglo.push(a)
+            this.num=a+1
         }
         return arreglo
     }
     serie(){
         let a=parseInt(document.getElementById("num1").value)
         let n=parseInt(document.getElementById("num2").value)
-        this.numero(a)
-        let serie=this.series(n)
+        let serie=this.series(a,n)
         
         document.getElementById("resp").textContent=`[${serie}]`
     }

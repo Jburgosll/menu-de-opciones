@@ -176,7 +176,7 @@ class Calculadora{
         let arreglo=[]
         while(a< n){
             arreglo.push(a)
-            this.num=a+1
+            a=a+1
         }
         return arreglo
     }

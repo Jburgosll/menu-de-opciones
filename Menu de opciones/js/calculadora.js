@@ -23,7 +23,7 @@ class Calculadora{
                 perfecto.push(num1[i])
             }
         }
-        document.getElementById("resp").textContent=`[${num1}]\nla suma entre ${perfecto} es = ${suma}`  
+        document.getElementById("resp").textContent=`[${num1}]\n${perfecto} son perfectos y su suma es = ${suma}`  
     }
     primo(){
         let d=document
@@ -130,7 +130,7 @@ class Calculadora{
     pares(){
         let num=parseInt(document.getElementById("num1").value)
         let numI=this.invertir(num),pares=[]
-        for(let i=0;i<numI.length;i++){
+        for(let i=numI.length;i>=0;i--){
             if(numI[i]%2==0){
                 pares.push(numI[i])
             }
